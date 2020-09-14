@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipSlider: UISlider!
     @IBOutlet weak var eachPersonAmount: UILabel!
     @IBOutlet weak var tipAmountLabel: UILabel!
+    @IBOutlet weak var tipEachLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,7 @@ class ViewController: UIViewController {
         let tipPercent = tipSlider.value
         let tipAmount = bill * Double(tipPercent) / 100
         tipLabel.text = String(format: "$%.1f", tipPercent)
-        tipAmountLabel.text =  String(format: "$%.2f", tipAmount)
+        tipAmountLabel.text =  String(format: "%.2f", tipAmount)
 
         //Update the tip and total labels
         let total = bill + tipAmount
@@ -50,6 +51,9 @@ class ViewController: UIViewController {
         let eachTotal=total/Double(numberOfPeople)
         eachPersonAmount.text = String(format: "$%.2f", eachTotal)
 
+        let tipEach = Double(tipAmount) / Double(numberOfPeople)
+        tipEachLabel.text = String(format: "$%.2f", tipEach)
+        
         
     }
 
