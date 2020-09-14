@@ -33,7 +33,7 @@
                                     <segment title="20%"/>
                                 </segments>
                                 <connections>
-                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="i3r-pI-bB1"/>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="1AB-qE-kvg"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tip Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NK-2o-rso">
@@ -64,9 +64,12 @@
                                 <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6YQ-Yy-pZY">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="6YQ-Yy-pZY">
                                 <rect key="frame" x="129" y="337" width="220" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ue5-Np-EAa"/>
+                                </connections>
                             </slider>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gmG-9P-t0g">
                                 <rect key="frame" x="45" y="416" width="302" height="68"/>
@@ -80,7 +83,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfP-xi-3By" userLabel="totalLabel">
-                                        <rect key="frame" x="107" y="10" width="187" height="48"/>
+                                        <rect key="frame" x="97" y="10" width="197" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -100,7 +103,7 @@
                                         <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecX-Ow-HMW" userLabel="totalLabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecX-Ow-HMW" userLabel="eachPersonAmount">
                                         <rect key="frame" x="81" y="16" width="146" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -111,7 +114,7 @@
                                 <color key="backgroundColor" red="0.81176470590000005" green="0.63921568630000003" blue="0.96862745100000003" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V7G-vs-IEk">
-                                <rect key="frame" x="47" y="387" width="300" height="9"/>
+                                <rect key="frame" x="47" y="387" width="300" height="7"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -120,21 +123,24 @@
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="Cfk-GC-rat" appends="YES" id="oUs-8M-Cg7"/>
+                            <outletCollection property="gestureRecognizers" destination="pbi-7B-UqK" appends="YES" id="eoC-UJ-XFb"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="9mq-UA-ncz"/>
                     <connections>
                         <outlet property="billField" destination="uct-3i-98q" id="btn-aK-USZ"/>
-                        <outlet property="tipControl" destination="U0u-O7-TMa" id="MkW-h3-3iu"/>
+                        <outlet property="eachPersonAmount" destination="ecX-Ow-HMW" id="7Mj-Fh-yGo"/>
+                        <outlet property="eachPersonLabel" destination="icR-vu-E99" id="ohg-iP-cV1"/>
+                        <outlet property="eachPersonSlider" destination="6YQ-Yy-pZY" id="zHp-1m-mOr"/>
+                        <outlet property="tipControl" destination="U0u-O7-TMa" id="TO1-Xv-n7H"/>
                         <outlet property="tipLabel" destination="bvz-2Q-hPv" id="7Bs-Ps-D2z"/>
                         <outlet property="totalLabel" destination="DfP-xi-3By" id="iiw-2d-giF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Cfk-GC-rat">
+                <tapGestureRecognizer id="pbi-7B-UqK">
                     <connections>
-                        <action selector="onTap:" destination="BYZ-38-t0r" id="kcK-Ra-rJS"/>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="h1s-vY-2SS"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
