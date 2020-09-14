@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         //Calculate the tip and total
         let tipPercent = tipSlider.value
         let tipAmount = bill * Double(tipPercent) / 100
-        tipLabel.text = String(format: "$%.1f", tipPercent)
+        tipLabel.text = String(format: "%.1f", tipPercent)
         tipAmountLabel.text =  String(format: "%.2f", tipAmount)
 
         //Update the tip and total labels
