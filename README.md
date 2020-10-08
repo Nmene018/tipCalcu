@@ -32,7 +32,7 @@ https://media.giphy.com/media/2wOMjJbFG9KRKXe0iF/giphy.gif
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The embedding might have an issue. However, the above gif is on giphy at that link.
 
 ## License
 
