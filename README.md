@@ -28,9 +28,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://im2.ezgif.com/tmp/ezgif-2-6a2bc6c8a315.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-
+https://media.giphy.com/media/2wOMjJbFG9KRKXe0iF/giphy.gif
 
 ## Notes
 
